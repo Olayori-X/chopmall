@@ -1,3 +1,4 @@
+"use client";
 import { ProductForm } from "@/features/products/components/ProductForm";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
