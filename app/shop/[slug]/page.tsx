@@ -23,13 +23,17 @@ export default function StorefrontPage() {
       <h1 className="text-3xl font-bold">{business?.name}</h1>
 
       <div className="grid grid-cols-2 gap-4">
-        {business?.products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            slug={slug}
-          />
-        ))}
+        {business?.products && business.products.length > 0 ? (
+          business.products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              slug={slug}
+            />
+          ))
+        ) : (
+          <p>No products available</p>
+        )}
       </div>
     </div>
   );
