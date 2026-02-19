@@ -11,6 +11,7 @@ export const useSignup = () => {
       setError(null);
       return await signup(formData);
     } catch (err: any) {
+      console.log("Signup error:", err);
       setError(err?.response?.data?.message || "Signup failed");
       throw err;
     } finally {
