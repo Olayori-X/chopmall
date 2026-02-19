@@ -8,19 +8,19 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
-  const { data, loading } = useDashboard();
-  console.log(data);
-
   const router = useRouter();
   
-    useEffect(() => {
-      const storedToken = localStorage.getItem("token");
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
 
-      if(storedToken === null) {
-        console.log(storedToken);
-        router.push("/login");
-      }
-    }, []);
+    if(storedToken === null) {
+      console.log(storedToken);
+      router.push("/login");
+    }
+  }, []);
+  
+  const { data, loading } = useDashboard();
+  console.log(data);
   
 
   if (loading) return <p>Loading...</p>;
