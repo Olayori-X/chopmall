@@ -12,7 +12,16 @@ export const useSignup = () => {
       return await signup(formData);
     } catch (err: any) {
       console.log("Signup error:", err);
-      setError(err?.response?.data?.message || "Signup failed");
+      const messages = err?.response?.data?.message;
+
+      if (typeof messages === "object") {
+        setError(
+          Object.values(messages).flat().join(" ")
+        );
+      } else {
+        setError(messages || "Signup failed");
+      }
+
       throw err;
     } finally {
       setLoading(false);
