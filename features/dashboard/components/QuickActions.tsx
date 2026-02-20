@@ -15,9 +15,10 @@ export const QuickActions = ({ slug }: Props) => {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(storeUrl);
-      alert("Store link copied!");
+      // alert("Store link copied!");
     } catch (err) {
-      alert("Failed to copy link");
+      // alert("Failed to copy link");
+      console.log(err);
     }
   };
 

@@ -33,15 +33,14 @@ export default function ProductsPage() {
   }
 
   return (
-    <div className="p-6 space-y-6 relative">
-      <h1 className="text-2xl font-bold">Products</h1>
+    <div className="min-h-screen bg-white p-4 md:p-8 space-y-6">
+      <h1 className="text-3xl font-bold text-gray-900">Products</h1>
 
       <ProductTable products={data?.data!} />
 
-      {/* ✅ Floating Add Button */}
       <Link
         href="/products/create"
-        className="fixed bottom-6 right-6 w-14 h-14 bg-orange-600 text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-orange-700 transition"
+        className="fixed bottom-8 right-8 w-14 h-14 bg-gray-900 text-white rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-gray-800 transition"
       >
         +
       </Link>

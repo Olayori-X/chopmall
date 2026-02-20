@@ -30,10 +30,9 @@ export default function DashboardPage() {
     data.groupedorders.find(o => o.status === "pending")?.total ?? 0;
 
   return (
-    <div className="p-6 space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="min-h-screen bg-white p-6 space-y-6">
+      <div className="flex items-center gap-4">
         <DashboardHeader name={data.userdetails.fullname} />
-        <DashboardSidebar slug={data.business?.slug ?? data.userdetails.fullname} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

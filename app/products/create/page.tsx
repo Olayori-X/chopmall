@@ -16,11 +16,15 @@ export default function CreateProductPage() {
   }, []);
   
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">
-        Add Product
-      </h1>
-      <ProductForm />
+    <div className="min-h-screen bg-white p-4 md:p-8">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+          Add Product
+        </h1>
+        <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+          <ProductForm />
+        </div>
+      </div>
     </div>
   );
 }
