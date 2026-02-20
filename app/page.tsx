@@ -32,13 +32,13 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <img
             src="/hero.png"
             alt="Preview"
             className="w-full max-w-sm sm:max-w-md lg:max-w-lg"
           />
-        </div>
+        </div> */}
       </section>
 
       {/* FEATURES */}

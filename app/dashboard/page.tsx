@@ -18,7 +18,7 @@ export default function DashboardPage() {
       router.push("/login");
     }
   }, []);
-  
+
   const { data, loading } = useDashboard();
   console.log(data);
   
@@ -33,7 +33,7 @@ export default function DashboardPage() {
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <DashboardHeader name={data.userdetails.fullname} />
-        <DashboardSidebar slug={data.business.slug} />
+        <DashboardSidebar slug={data.business.slug || data.userdetails.fullname} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
