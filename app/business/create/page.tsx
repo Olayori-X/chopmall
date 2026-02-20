@@ -22,16 +22,20 @@ export default function CreateBusinessPage() {
 
   if (!data?.success) {
     return (
-      <div className="p-6">
-        <h1 className="text-xl font-bold">{data?.message}</h1>
+      <div className="min-h-screen bg-white p-6">
+        <h1 className="text-2xl font-bold text-gray-900">{data?.message}</h1>
       </div>
     );
   }
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Create Business</h1>
-      <CreateBusinessForm />
+    <div className="min-h-screen bg-white p-4 md:p-8">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">Create Business</h1>
+        <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+          <CreateBusinessForm />
+        </div>
+      </div>
     </div>
   );
 }

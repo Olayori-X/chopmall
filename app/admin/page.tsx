@@ -10,8 +10,7 @@ export default function AdminAddProduct() {
     price: "",
     description: "",
     image: null as File | null,
-});
-
+  });
 
   const handleChange = (e: any) => {
     setForm({
@@ -33,59 +32,88 @@ export default function AdminAddProduct() {
   };
 
   const handleFileChange = (e: any) => {
-        setForm({
-            ...form,
-            image: e.target.files[0],
-        });
-    };
-
+    setForm({
+      ...form,
+      image: e.target.files[0],
+    });
+  };
 
   return (
-    <div className="p-6 max-w-lg mx-auto">
-      <h1 className="text-xl font-bold mb-4">Admin Add Product</h1>
+    <div className="min-h-screen bg-white p-4 md:p-8">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">Add Product</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          name="slug"
-          placeholder="Business Slug"
-          onChange={handleChange}
-          className="w-full border p-2"
-        />
+        <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-900 mb-2">
+                Business Slug
+              </label>
+              <input
+                name="slug"
+                placeholder="Enter business slug"
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+              />
+            </div>
 
-        <input
-          name="name"
-          placeholder="Product Name"
-          onChange={handleChange}
-          className="w-full border p-2"
-        />
+            <div>
+              <label className="block text-sm font-medium text-gray-900 mb-2">
+                Product Name
+              </label>
+              <input
+                name="name"
+                placeholder="Enter product name"
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+              />
+            </div>
 
-        <input
-          name="price"
-          placeholder="Price"
-          type="number"
-          onChange={handleChange}
-          className="w-full border p-2"
-        />
+            <div>
+              <label className="block text-sm font-medium text-gray-900 mb-2">
+                Price
+              </label>
+              <input
+                name="price"
+                placeholder="Enter price"
+                type="number"
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+              />
+            </div>
 
-        <textarea
-          name="description"
-          placeholder="Description"
-          onChange={handleChange}
-          className="w-full border p-2"
-        />
+            <div>
+              <label className="block text-sm font-medium text-gray-900 mb-2">
+                Description
+              </label>
+              <textarea
+                name="description"
+                placeholder="Enter product description"
+                onChange={handleChange}
+                rows={5}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+              />
+            </div>
 
-        <input
-            type="file"
-            name="image"
-            accept="image/*"
-            onChange={handleFileChange}
-            className="w-full border p-2"
-        />
+            <div>
+              <label className="block text-sm font-medium text-gray-900 mb-2">
+                Product Image
+              </label>
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+              />
+            </div>
 
-        <button className="bg-black text-white px-4 py-2 w-full">
-          Create Product
-        </button>
-      </form>
+            <button className="w-full bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition">
+              Create Product
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

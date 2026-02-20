@@ -8,12 +8,13 @@ export const DashboardSidebar = ({ slug }: { slug: string }) => {
 
   return (
     <>
-      {/* ☰ Button */}
-      <button
-        onClick={() => setOpen(true)}
-        className="text-2xl p-2"
-      >
-        ☰
+      {/* Hamburger Button (thicker lines) */}
+      <button onClick={() => setOpen(true)} className="p-2">
+        <span className="inline-flex flex-col justify-between w-6 h-5">
+          <span className="block h-1.5 bg-gray-900 rounded"></span>
+          <span className="block h-1.5 bg-gray-900 rounded"></span>
+          <span className="block h-1.5 bg-gray-900 rounded"></span>
+        </span>
       </button>
 
       {/* Overlay */}

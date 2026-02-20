@@ -29,7 +29,13 @@ export const useCreateBusiness = () => {
       const res = await createBusiness(formData);
 
       if (res.success) {
-        router.push("/dashboard");
+        // After creating a business navigate to products and refresh
+        router.push("/products");
+        try {
+          router.refresh();
+        } catch (e) {
+          // ignore if refresh not available
+        }
       }
 
     } catch (error: any) {

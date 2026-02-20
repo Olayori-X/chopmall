@@ -30,13 +30,13 @@ export default function OrdersPage() {
   const todayTotal = data.data?.today_total ?? 0;
 
   return (
-    <div className="p-6 space-y-6">
-      <h1 className="text-2xl font-bold">Orders</h1>
+    <div className="min-h-screen bg-white p-4 md:p-8 space-y-6">
+      <h1 className="text-3xl font-bold text-gray-900">Orders</h1>
 
       <OrdersSummary todayTotal={todayTotal} />
 
       {orders.length === 0 ? (
-        <p>No orders yet.</p>
+        <p className="text-gray-600">No orders yet.</p>
       ) : (
         <OrdersTable orders={orders} />
       )}

@@ -39,11 +39,19 @@ export const CreateBusinessForm = () => {
         required
       />
 
-      <input
-        type="file"
-        onChange={(e) => setLogo(e.target.files?.[0] || null)}
-        className="w-full"
-      />
+      <div className="w-full">
+        <label className="block w-full border-2 border-dashed border-black rounded-md p-4 text-sm text-gray-700 cursor-pointer">
+          <span className="block">Choose file</span>
+          <input
+            type="file"
+            onChange={(e) => setLogo(e.target.files?.[0] || null)}
+            className="mt-2 w-full text-sm file:bg-black file:text-white file:px-3 file:py-2 file:rounded file:border-0"
+          />
+          {logo && (
+            <div className="mt-2 text-sm text-gray-700">Selected: {logo.name}</div>
+          )}
+        </label>
+      </div>
 
       {error && <p className="text-red-500">{error}</p>}
 

@@ -19,21 +19,23 @@ export default function StorefrontPage() {
   const business = data.data;
 
   return (
-    <div className="p-6 space-y-6">
-      <h1 className="text-3xl font-bold">{business?.name}</h1>
+    <div className="min-h-screen bg-white p-4 md:p-8">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">{business?.name}</h1>
 
-      <div className="grid grid-cols-2 gap-4">
-        {business?.products && business.products.length > 0 ? (
-          business.products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              slug={slug}
-            />
-          ))
-        ) : (
-          <p>No products available</p>
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {business?.products && business.products.length > 0 ? (
+            business.products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                slug={slug}
+              />
+            ))
+          ) : (
+            <p className="text-gray-600">No products available</p>
+          )}
+        </div>
       </div>
     </div>
   );
